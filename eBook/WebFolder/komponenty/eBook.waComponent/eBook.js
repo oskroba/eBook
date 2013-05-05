@@ -33,8 +33,12 @@ function constructor (id) {
 	bPrawy.click = function bPrawy_click (event)// @startlock
 	{// @endlock
 		//	$$('componentSrodka').loadComponent({path: "/komponenty/oferty/lista.waComponent"});
+				
 					$$('componentSrodka').loadComponent({path: "/komponenty/oferty/lista.waComponent"});// Add your code here
 	};// @lock
+
+	arrKsiegarnieOferty = oferty.getKsiegarnie();
+					sources.arrKsiegarnieOferty.sync();
 
 	// @region eventManager// @startlock
 	WAF.addListener(this.id + "_bLewy", "click", bLewy.click, "WAF");

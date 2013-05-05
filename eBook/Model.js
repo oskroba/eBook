@@ -1,6 +1,19 @@
 
 guidedModel =// @startlock
 {
+	Oferta :
+	{
+		DlaWszystkich :
+		{
+			events :
+			{
+				onInit:function(attributeName)
+				{// @endlock
+					DlaWszystkich = true;
+				}// @startlock
+			}
+		}
+	},
 	Login_Wydawnictwa :
 	{
 		methods :

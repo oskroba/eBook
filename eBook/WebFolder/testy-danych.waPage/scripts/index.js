@@ -6,6 +6,10 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 // eventHandlers// @lock
 
+
+	arrKsiegarnieOferty = oferty.getKsiegarnie();
+	sources.arrKsiegarnieOferty.sync();
+
 // @region eventManager// @startlock
 // @endregion
 };// @endlock
