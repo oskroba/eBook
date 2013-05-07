@@ -11,6 +11,7 @@ function constructor (id) {
 	// @endregion// @endlock
 
 	this.load = function (data) {// @lock
+		
 
 	// @region namespaceDeclaration// @startlock
 	var bLewy = {};	// @button
@@ -37,8 +38,9 @@ function constructor (id) {
 					$$('componentSrodka').loadComponent({path: "/komponenty/oferty/lista.waComponent"});// Add your code here
 	};// @lock
 
-	arrKsiegarnieOferty = oferty.getKsiegarnie();
-					sources.arrKsiegarnieOferty.sync();
+//	arrKsiegarnieOferty = oferty.getKsiegarnie();
+			sources.arrKsiegarnieOferty.sync();
+			sources.eBook.serverRefresh();
 
 	// @region eventManager// @startlock
 	WAF.addListener(this.id + "_bLewy", "click", bLewy.click, "WAF");

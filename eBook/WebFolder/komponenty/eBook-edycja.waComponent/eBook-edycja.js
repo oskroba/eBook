@@ -27,7 +27,9 @@ function constructor (id) {
 	bPrawy.click = function bPrawy_click (event)// @startlock
 	{// @endlock
 			//sources.eBook.save();
-			$$('componentSrodka').sources.eBook.save()
+			//$$('componentSrodka').
+			sources.eBook.save();
+			//sources.eBook.sync;
 			$$('componentSrodka').loadComponent({path: "/komponenty/eBook.waComponent"});
 	};// @lock
 

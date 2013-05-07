@@ -31,7 +31,10 @@ function constructor (id) {
 	szukaj.keyup = function szukaj_keyup (event)// @startlock
 	{// @endlock
 		//$comp.sources.eBook.query('Autor = Sodomski');
-		$comp.sources.eBook.query('Tytul = :1', $$(getHtmlId('szukaj')).getValue() + '*');
+		//debugger;
+		//$comp.sources.eBook.query('Tytul = :1', $$(getHtmlId('szukaj')).getValue() + '*');
+		var queryValue = $$(getHtmlId('szukaj')).getValue() + '*';
+		sources.eBook.query('Tytul = :1 OR Autor = :1',queryValue);
 	};// @lock
 
 	button6.click = function button6_click (event)// @startlock
