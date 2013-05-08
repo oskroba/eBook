@@ -16,8 +16,36 @@ guidedModel =// @startlock
 	},
 	Login_Wydawnictwa :
 	{
+		events :
+		{
+			onInit:function()
+			{// @endlock
+				this.DataUtworzenia = new Date();
+			},// @startlock
+			onSave:function()
+			{// @endlock
+				this.DataZmian = new Date();
+			}// @startlock
+		},
 		methods :
 		{// @endlock
+			HA1update:function(eMail,password)
+			{// @lock
+				var znaleziony = this.find("eMail_login = :1", eMail);   // Add your code here
+				if (znaleziony != null) {
+					var klucz = directory.computeHA1(znaleziony.DirectoryID, password);
+					znaleziony.HA1key = klucz;
+					znaleziony.save();
+					return true;
+				}
+			},// @lock
+			sprMailLogin:function(eMail)
+			{// @lock
+				var znaleziony = this.find("eMail_login = :1", eMail);
+				if (znaleziony != null) {
+					return true;
+				}
+			},// @lock
 			addUser:function(zalogIdWydawnictwa, login, password1, imieNazwisko)
 			{// @lock
 				//debugger;
