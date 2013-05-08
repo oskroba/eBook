@@ -20,6 +20,7 @@ guidedModel =// @startlock
 		{// @endlock
 			addUser:function(zalogIdWydawnictwa, login, password1, imieNazwisko)
 			{// @lock
+				//debugger;
 				var zmienianyLoginWyd = new ds.Login_Wydawnictwa();
 				//zmienianyLoginWyd.eMail_login = login;
 				zmienianyLoginWyd.wydawnictwo = ds.Wydawnictwo.find("ID = :1", zalogIdWydawnictwa);
