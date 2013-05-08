@@ -34,11 +34,21 @@ function constructor (id) {
 	{// @endlock
 		//debugger;
 		var selectedEntity = $$("componentSrodka_gridLoginow").dataSource.getCurrentElement();
-		user.name = selectedEntity.eMail_login;
-		user.fullName = selectedEntity.Imie_nazwisko;
-		user.password = "";
-		user.id = selectedEntity.ID;
-		sources.user.sync();
+		if(selectedEntity.eMail_login != curUser.name){
+				$$("componentSrodka_dialogLoginu").show();
+			user.name = selectedEntity.eMail_login;
+			user.fullName = selectedEntity.Imie_nazwisko;
+			user.password = "";
+			user.id = selectedEntity.ID;
+			sources.user.sync();
+		}else{
+			$$("componentSrodka_dialogLoginu").hide();
+			user.name = "";
+			user.fullName = "";
+			user.password = "";
+			user.id = "";
+			sources.user.sync();
+		}
 	};// @lock
 
 	textFieldPrzyLiscie_Login.change = function textFieldPrzyLiscie_Login_change (event)// @startlock
