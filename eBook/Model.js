@@ -25,6 +25,7 @@ guidedModel =// @startlock
 				zmienianyLoginWyd.wydawnictwo = ds.Wydawnictwo.find("ID = :1", zalogIdWydawnictwa);
 				zmienianyLoginWyd.save();
 				directory.addUser(login,password1,imieNazwisko);
+				directory.user(login).putInto('Uzytkownicy');
 				directory.save();					
 				dirID = directory.user(login).ID;							 			
 				zmienianyLoginWyd.DirectoryID = dirID;
@@ -79,6 +80,7 @@ guidedModel =// @startlock
 							zmieniany.remove();
 							directory.save();					
 							directory.addUser(login,password1,imieNazwisko);
+							directory.user(login).putInto('Uzytkownicy');
 							directory.save();
 						} else {
 							zmieniany.setPassword(password1);

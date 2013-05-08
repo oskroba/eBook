@@ -13,6 +13,7 @@ function constructor (id) {
 	this.load = function (data) {// @lock
 	//debugger;
 	// @region namespaceDeclaration// @startlock
+	var gridLoginow = {};	// @dataGrid
 	var textFieldPrzyLiscie_Login = {};	// @textField
 	var bLewy = {};	// @button
 	var bZmienSwojeHaslo = {};	// @button
@@ -24,11 +25,21 @@ function constructor (id) {
 	var bUsun_zGrida = {};	// @button
 	var bSavePrzyLiscie = {};	// @button
 	var button1 = {};	// @button
-	var dataGrid1 = {};	// @dataGrid
 	var bPrawy = {};	// @button
 	// @endregion// @endlock
 
 	// eventHandlers// @lock
+
+	gridLoginow.onRowClick = function gridLoginow_onRowClick (event)// @startlock
+	{// @endlock
+		//debugger;
+		var selectedEntity = $$("componentSrodka_gridLoginow").dataSource.getCurrentElement();
+		user.name = selectedEntity.eMail_login;
+		user.fullName = selectedEntity.Imie_nazwisko;
+		user.password = "";
+		user.id = selectedEntity.ID;
+		sources.user.sync();
+	};// @lock
 
 	textFieldPrzyLiscie_Login.change = function textFieldPrzyLiscie_Login_change (event)// @startlock
 	{// @endlock
@@ -107,7 +118,7 @@ function constructor (id) {
 	bUsun_zGrida.click = function bUsun_zGrida_click (event)// @startlock
 	{// @endlock
 		debugger;
-			var result = users.deleteUser(sources.user.name, $$("componentSrodka_dataGrid1").updateGrid);
+			var result = users.deleteUser(sources.user.name, $$("componentSrodka_gridLoginow").updateGrid);
 			if (result) {
 				updateGrid();
 			} else {
@@ -181,17 +192,6 @@ function constructor (id) {
 		
 	//};
 
-	dataGrid1.onRowClick = function dataGrid1_onRowClick (event)// @startlock
-	{// @endlock
-		//debugger;
-		var selectedEntity = $$("componentSrodka_dataGrid1").dataSource.getCurrentElement();
-		user.name = selectedEntity.eMail_login;
-		user.fullName = selectedEntity.Imie_nazwisko;
-		user.password = "";
-		user.id = selectedEntity.ID;
-		sources.user.sync();
-	};// @lock
-
 	bPrawy.click = function bPrawy_click (event)// @startlock
 	{// @endlock
 			//sources.eBook.save();
@@ -236,6 +236,7 @@ function constructor (id) {
 	}
 
 	// @region eventManager// @startlock
+	WAF.addListener(this.id + "_gridLoginow", "onRowClick", gridLoginow.onRowClick, "WAF");
 	WAF.addListener(this.id + "_textFieldPrzyLiscie_Login", "change", textFieldPrzyLiscie_Login.change, "WAF");
 	WAF.addListener(this.id + "_bLewy", "click", bLewy.click, "WAF");
 	WAF.addListener(this.id + "_bZmienSwojeHaslo", "click", bZmienSwojeHaslo.click, "WAF");
@@ -248,7 +249,6 @@ function constructor (id) {
 	WAF.addListener(this.id + "_bUsun_zGrida", "click", bUsun_zGrida.click, "WAF");
 	WAF.addListener(this.id + "_bSavePrzyLiscie", "click", bSavePrzyLiscie.click, "WAF");
 	WAF.addListener(this.id + "_button1", "click", button1.click, "WAF");
-	WAF.addListener(this.id + "_dataGrid1", "onRowClick", dataGrid1.onRowClick, "WAF");
 	WAF.addListener(this.id + "_bPrawy", "click", bPrawy.click, "WAF");
 	// @endregion// @endlock
 
