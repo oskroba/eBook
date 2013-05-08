@@ -22,4 +22,6 @@ studio_log*
 bkpts.json
 # Wakanda backup
 *.waBackup
-
+/eBook/schowek/
+/eBook/DataFolder/
+/eBook Solution/Directory.waDirectory
