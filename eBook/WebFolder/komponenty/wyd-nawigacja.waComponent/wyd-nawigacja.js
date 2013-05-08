@@ -30,12 +30,12 @@ function constructor (id) {
 
 	imageButton1.click = function imageButton1_click (event)// @startlock
 	{// @endlock
-			$$('componentSrodka').loadComponent({path: "/komponenty/eBooki.waComponent"});// Add your code here
+		$$('componentSrodka').loadComponent({path: "/komponenty/eBooki.waComponent"});// Add your code here
 	};// @lock
 
 	imageButton2.click = function imageButton2_click (event)// @startlock
 	{// @endlock
-	$$('componentSrodka').loadComponent({path: "/komponenty/pustyStd.waComponent"});
+		$$('componentSrodka').loadComponent({path: "/komponenty/pustyStd.waComponent"});
 	};// @lock
 
 	imageButtonUsers.click = function imageButtonUsers_click (event)// @startlock
@@ -50,7 +50,7 @@ function constructor (id) {
 
 	richText2.click = function richText2_click (event)// @startlock
 	{// @endlock
-			$$('componentSrodka').loadComponent({path: "/komponenty/admin/admin.waComponent"});
+		$$('componentSrodka').loadComponent({path: "/komponenty/admin/admin.waComponent"});
 	};// @lock
 
 	// @region eventManager// @startlock

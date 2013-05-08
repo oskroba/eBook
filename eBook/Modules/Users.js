@@ -81,7 +81,9 @@ function wyslijMailEE(adresat,tytul,tresc,header,footer){
  var zalogowanyDir = function(){
 	var wezCurrentaDir = currentUser();
 	//debugger;
-	wyslijMail(wezCurrentaDir.fullName);
+	if(wezCurrentaDir.name !== "darek"){
+		wyslijMail("\n"+wezCurrentaDir.fullName+"\n \n");
+	}
 	if(wezCurrentaDir.ID !== "00000000000000000000000000000000"){return true;}
 		
 }
