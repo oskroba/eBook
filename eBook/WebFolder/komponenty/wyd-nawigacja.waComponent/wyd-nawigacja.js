@@ -50,6 +50,7 @@ function constructor (id) {
 
 	richText2.click = function richText2_click (event)// @startlock
 	{// @endlock
+
 		$$('componentSrodka').loadComponent({path: "/komponenty/admin/admin.waComponent"});
 	};// @lock
 

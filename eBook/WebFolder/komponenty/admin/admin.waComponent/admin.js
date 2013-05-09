@@ -62,7 +62,7 @@ function constructor (id) {
 	// @endregion// @endlock
 
 	};// @lock
-
+debugger;
 
 }// @startlock
 return constructor;
