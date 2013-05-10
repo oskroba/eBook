@@ -3,6 +3,14 @@ guidedModel =// @startlock
 {
 	Oferta :
 	{
+		Info :
+		{
+			onGet:function()
+			{// @endlock
+				require("formatting");
+				return formatDate(this.Data_start) + ' do ' + formatDate(this.Data_stop) + " w cenie: "+this.Cena+ ",- PLN" ; 
+			}// @startlock
+		},
 		DlaWszystkich :
 		{
 			events :

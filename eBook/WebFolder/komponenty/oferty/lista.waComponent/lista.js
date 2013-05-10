@@ -29,8 +29,8 @@ function constructor (id) {
 	{// @endlock
 	//debugger;
 		sources.arrKsiegarnieOferty.sync();
-		if($$("componentSrodka").sources.ofertaCollection.Gotowa == false){
-		if($$("componentSrodka").sources.ofertaCollection.DlaWszystkich == false) {
+		if($$("componentSrodka").sources.ofertaCollection.Gotowa in {'false':true, 'null':true}){
+		if($$("componentSrodka").sources.ofertaCollection.DlaWszystkich in {'false':true, 'null':true}) {
 			var pary = new Array;
 			for (var i=0; i<arrKsiegarnieOferty.length; i++) {
 				if (arrKsiegarnieOferty[i].Tak) {
@@ -73,9 +73,12 @@ sources.arrKsiegarnieOferty.sync();
 
 	container22.click = function container22_click (event)// @startlock
 	{// @endlock
-		
+		//debugger;
+		if($$("componentSrodka").sources.ofertaCollection.Gotowa in {'true':true, 'null':true}){
+			arrKsiegarnieOferty = oferty.getSelOfert($$("componentSrodka").sources.ofertaCollection.ID);
+		}else{	
 			arrKsiegarnieOferty = oferty.getSelOfertPusta();
-			
+	}		
 			
 //			for (var i=0; i<arrKsiegarnieOferty.length; i++) {
 //				arrKsiegarnieOferty[i].Tak = false;
@@ -128,8 +131,16 @@ sources.arrKsiegarnieOferty.sync();
 			
 			//ds.startTransaction();
 			$$('componentSrodka').sources.ofertaCollection.newEntity();
-			$$('componentSrodka').sources.ofertaCollection.DlaWszystkich = true;
+			$$('componentSrodka').sources.ofertaCollection.DlaWszystkich = false;
+			//$$('componentSrodka').sources.ofertaCollection.Data_start = new Date();
+			//$$('componentSrodka_checkbox2').sync();
 			$$('componentSrodka').sources.ofertaCollection.Gotowa = false;
+//			$$('componentSrodka').sources.ofertaCollection.sync();
+//			sources.ofertaCollection.newEntity();
+//			sources.ofertaCollection.DlaWszystkich = true;
+//			sources.ofertaCollection.Gotowa = false;
+//			sources.ofertaCollection.save();
+			
 	};// @lock
 
 	bLewy.click = function bLewy_click (event)// @startlock
