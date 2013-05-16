@@ -205,9 +205,9 @@ function constructor (id) {
 	bPrawy.click = function bPrawy_click (event)// @startlock
 	{// @endlock
 			//sources.eBook.save();
-			users.wyslijMailaSerw("Oto tytułąą","ąąąą");
+			//users.wyslijMailaSerw("Oto tytułąą","ąąąą");
 //			$$('componentSrodka').sources.eBook.save()
-//			$$('componentSrodka').loadComponent({path: "/komponenty/eBook.waComponent"});
+		$$('componentSrodka').loadComponent({path: "/komponenty/wyd-nawigacja.waComponent"});
 	};// @lock
 	
 	

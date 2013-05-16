@@ -1,6 +1,16 @@
 
 guidedModel =// @startlock
 {
+	EBook :
+	{
+		Info :
+		{
+			onGet:function()
+			{// @endlock
+				return this.Autor + ': ' + this.Tytul ;
+			}// @startlock
+		}
+	},
 	Oferta :
 	{
 		Info :

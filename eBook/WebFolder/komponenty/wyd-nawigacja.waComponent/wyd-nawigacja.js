@@ -13,7 +13,6 @@ function constructor (id) {
 	this.load = function (data) {// @lock
 
 	// @region namespaceDeclaration// @startlock
-	var richText3 = {};	// @richText
 	var imageButton1 = {};	// @buttonImage
 	var imageButton2 = {};	// @buttonImage
 	var imageButtonUsers = {};	// @buttonImage
@@ -23,14 +22,9 @@ function constructor (id) {
 
 	// eventHandlers// @lock
 
-	richText3.click = function richText3_click (event)// @startlock
-	{// @endlock
-		$$('componentSrodka').loadComponent({path: "/komponenty/oferty/lista.waComponent"});
-	};// @lock
-
 	imageButton1.click = function imageButton1_click (event)// @startlock
 	{// @endlock
-		$$('componentSrodka').loadComponent({path: "/komponenty/eBooki.waComponent"});// Add your code here
+		$$('componentSrodka').loadComponent({path: "/komponenty/eBooki/eBooki.waComponent"});// Add your code here
 	};// @lock
 
 	imageButton2.click = function imageButton2_click (event)// @startlock
@@ -55,7 +49,6 @@ function constructor (id) {
 	};// @lock
 
 	// @region eventManager// @startlock
-	WAF.addListener(this.id + "_richText3", "click", richText3.click, "WAF");
 	WAF.addListener(this.id + "_imageButton1", "click", imageButton1.click, "WAF");
 	WAF.addListener(this.id + "_imageButton2", "click", imageButton2.click, "WAF");
 	WAF.addListener(this.id + "_imageButtonUsers", "click", imageButtonUsers.click, "WAF");
